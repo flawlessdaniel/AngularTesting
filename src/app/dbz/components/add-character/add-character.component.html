@@ -1,0 +1,7 @@
+<form class="form-group" (ngSubmit)="EmitirPersonaje()">
+  <span>Nombre</span>
+  <input name="nombre" [(ngModel)]="nuevoPersonaje.nombre" type="text" class="form-control" />
+  <span>Poder</span>
+  <input name="poder" [(ngModel)]="nuevoPersonaje.poder" type="text" class="form-control mt-2" />
+  <button type="submit" class="btn btn-primary mt-2 col-12">Agregar</button>
+</form>
