@@ -1,0 +1,13 @@
+<img
+  class="img img-fluid card-img-top animate__animated animate__fadeIn"
+  [src]="url"
+  [alt]="alt"
+  (load)="onLoad()"
+  [ngStyle]="{display: hasLoaded ? 'block' : 'none'}" />
+
+<img *ngIf="!hasLoaded"
+  class="img img-fluid card-img-top "
+  src="assets/loader.gif"
+  height="35"
+  width="35"
+/>
