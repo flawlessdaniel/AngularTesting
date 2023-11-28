@@ -1,12 +1,16 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PorcapitalComponent } from './countries/components/porcapital/porcapital.component';
+import { HomeComponent } from './shared/components/home/home.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: PorcapitalComponent,
+    component: HomeComponent
+  },
+  {
+    path: 'countries',
+    loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
   },
   {
     path: '**',
