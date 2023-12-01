@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PorcapitalComponent } from './components/porcapital/porcapital.component';
-import { PorpaisComponent } from './components/porpais/porpais.component';
-import { PorregionComponent } from './components/porregion/porregion.component';
+import { PorcapitalComponent } from './pages/porcapital/porcapital.component';
+import { PorpaisComponent } from './pages/porpais/porpais.component';
+import { PorregionComponent } from './pages/porregion/porregion.component';
+import { InfopaisComponent } from './pages/infopais/infopais.component';
 
 const routes: Routes = [
   {
@@ -18,8 +19,8 @@ const routes: Routes = [
     component: PorregionComponent
   },
   {
-    path: '**',
-    redirectTo: 'porpais'
+    path: 'pais/:code',
+    component: InfopaisComponent
   }
 ]
 

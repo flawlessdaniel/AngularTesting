@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
-import { PorcapitalComponent } from './components/porcapital/porcapital.component';
-import { PorpaisComponent } from './components/porpais/porpais.component';
-import { PorregionComponent } from './components/porregion/porregion.component';
+import { PorcapitalComponent } from './pages/porcapital/porcapital.component';
+import { PorpaisComponent } from './pages/porpais/porpais.component';
+import { PorregionComponent } from './pages/porregion/porregion.component';
 import { CountriesRoutingModule } from './countries-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { ListadoPaisComponent } from './components/listado-pais/listado-pais.component';
+import { CommonModule } from '@angular/common';
+import { InfopaisComponent } from './pages/infopais/infopais.component';
+import { DetallePaisComponent } from './components/detalle-pais/detalle-pais.component';
 
 @NgModule({
   imports: [
-    CountriesRoutingModule
+    CountriesRoutingModule,
+    SharedModule,
+    CommonModule
   ],
   exports: [
     PorcapitalComponent,
@@ -16,7 +23,10 @@ import { CountriesRoutingModule } from './countries-routing.module';
   declarations: [
     PorcapitalComponent,
     PorpaisComponent,
-    PorregionComponent
+    PorregionComponent,
+    ListadoPaisComponent,
+    InfopaisComponent,
+    DetallePaisComponent
   ],
 })
 export class CountriesModule {
