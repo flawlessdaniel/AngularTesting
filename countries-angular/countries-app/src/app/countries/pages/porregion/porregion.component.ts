@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/countries';
+import { Region } from '../../interfaces/types';
 
 @Component({
   selector: 'countries-porregion',
@@ -8,13 +9,21 @@ import { Country } from '../../interfaces/countries';
   styles: [
   ]
 })
-export class PorregionComponent {
+export class PorregionComponent implements OnInit {
 
   constructor(private _countriesService: CountriesService) {}
 
+  public regiones: Region[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   public countries: Country[] = [];
+  public regionSeleccionada? : Region;
 
-  public onSearch(termino: string): void {
+  ngOnInit(): void {
+    this.regionSeleccionada = this._countriesService.cacheStore?.porRegion.region;
+    this.countries = this._countriesService.cacheStore?.porRegion.paises ?? [];
+  }
+
+  public onSearch(termino: Region): void {
+    this.regionSeleccionada = termino;
     this._countriesService.getCountriesByRegion(termino)
         .subscribe(paises => {
           this.countries = paises;

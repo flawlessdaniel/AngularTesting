@@ -1,1 +1,20 @@
-<p>detalle-pais works!</p>
+<h1>{{Pais?.name?.common}}</h1>
+<hr>
+<div class="row">
+  <div class="col-4">
+    <img [src]="Pais?.flags?.png" alt="bandera" width="200">
+  </div>
+  <div class="col">
+    <ul class="list-group ">
+      <li class="list-group-item ">{{Pais?.population}}</li>
+      <li class="list-group-item ">{{Pais?.cca3}}</li>
+      <li class="list-group-item ">{{Pais?.capital}}</li>
+    </ul>
+  </div>
+</div>
+<div class="row mx-2 mt-2">
+  <span class="badge bg-primary col-1 mx-2 ">{{ Pais?.languages?.['aym'] ?? '' }}</span>
+  <span class="badge bg-primary col-1 mx-2 ">{{ Pais?.languages?.['esp'] ?? '' }}</span>
+  <span class="badge bg-primary col-1 mx-2 ">{{ Pais?.languages?.['spa'] ?? '' }}</span>
+  <span class="badge bg-primary col-1 mx-2 ">{{ Pais?.languages?.['que'] ?? '' }}</span>
+</div>

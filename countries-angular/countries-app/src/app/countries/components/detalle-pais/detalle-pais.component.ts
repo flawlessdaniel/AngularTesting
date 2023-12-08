@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Country } from '../../interfaces/countries';
 
 @Component({
   selector: 'countries-detalle-pais',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   ]
 })
 export class DetallePaisComponent {
+
+  constructor() { }
+
+  @Input()
+  public Pais?: Country;
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
+import { switchMap } from 'rxjs';
+import { Country } from '../../interfaces/countries';
 
 @Component({
   selector: 'countries-infopais',
@@ -15,15 +17,18 @@ export class InfopaisComponent implements OnInit {
     private _countriesService: CountriesService,
     private _router: Router) { }
 
+    public Pais?: Country;
+
   ngOnInit(): void {
     this._activatedRoute.params
-        .subscribe(({ code }) => {
-          console.log(code);
-          // this._countriesService.getCountryByAlpha(id)
-          //     .subscribe(pais => {
-
-          //     });
-        });
+    .pipe(
+      switchMap(({ code }) => this._countriesService.getCountryByAlpha(code)),
+    )
+    .subscribe(resp => {
+      if (resp !== null) {
+        this.Pais = resp;
+      }
+    });
   }
 
 }

@@ -1,5 +1,12 @@
 <div class="row">
-  <shared-searchbox (onSearch)="onSearch($event)"></shared-searchbox>
+  <div class="col text-center ">
+    <button *ngFor="let region of regiones"
+    class="btn btn-sm mx-2 col-1 text-center "
+    [ngClass]="{'btn-outline-info' : region === regionSeleccionada}"
+    (click)="onSearch(region)">
+    {{ region }}
+  </button>
+  </div>
 </div>
 
 <div class="row mt-4">
