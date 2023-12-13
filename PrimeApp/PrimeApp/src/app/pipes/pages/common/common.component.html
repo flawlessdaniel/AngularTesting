@@ -1,0 +1,47 @@
+<p-panel header="Textos" class="m-2 p-2 ">
+  <div class="grid">
+    <div class="col-4">
+      <h3>Title Case</h3>
+    </div>
+    <div class="col-4">
+      <h3>Upper Case</h3>
+    </div>
+    <div class="col-4">
+      <h3>Lower Case</h3>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-4">
+      {{ nombreRaro | titlecase}}
+    </div>
+    <div class="col-4">
+      {{ nombreRaro | uppercase}}
+    </div>
+    <div class="col-4">
+      {{ nombreRaro | lowercase}}
+    </div>
+  </div>
+</p-panel>
+
+<p-panel header="Fechas" class="m-2 p-2 ">
+  <div class="grid">
+    <div class="col-6">
+      <ol>
+        <li> Fecha </li>
+        <li> Fecha Corta </li>
+        <li> Fecha Larga </li>
+        <li> Fecha Esp </li>
+        <li> Fecha Personalizada </li>
+      </ol>
+    </div>
+    <div class="col-6">
+      <ol>
+        <li> {{ fechaPrueba }} </li>
+        <li> {{ fechaPrueba | date:'short'}} </li>
+        <li> {{ fechaPrueba | date:'long'}} </li>
+        <li> {{ fechaPrueba | date:'long':'gmt-4':'en-US'}} </li>
+        <li> {{ fechaPrueba | date:"MMM dd, yyyy 'at' hh:mm a"}} </li>
+      </ol>
+    </div>
+  </div>
+</p-panel>
