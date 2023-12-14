@@ -1,1 +1,24 @@
-<p>personalizados works!</p>
+<p-panel header="Numeros" class="m-2 p-2 ">
+  <div class="grid">
+    <div class="col-4">
+      <h3>Can Fly</h3>
+    </div>
+    <div class="col-4">
+      <h3>Ordenamiento Asc </h3>
+    </div>
+    <div class="col-4">
+      <h3>Ordenamiento Dsc </h3>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-4">
+      {{ canFly | canfly }}
+    </div>
+    <div class="col-4">
+      {{ value | sort }}
+    </div>
+    <div class="col-4">
+      {{ value | sort:false }}
+    </div>
+  </div>
+</p-panel>

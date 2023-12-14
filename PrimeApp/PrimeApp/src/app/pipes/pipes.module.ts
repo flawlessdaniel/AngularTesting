@@ -5,6 +5,8 @@ import { PipesRoutingModule } from './pipes-routing.module';
 import { PrimengModule } from '../primeng/primeng.module';
 import { CommonComponent } from './pages/common/common.component';
 import { PersonalizadosComponent } from './pages/personalizados/personalizados.component';
+import { CanflyPipe } from './canfly.pipe';
+import { SortPipe } from './sort.pipe';
 
 
 
@@ -12,7 +14,9 @@ import { PersonalizadosComponent } from './pages/personalizados/personalizados.c
   declarations: [
     CommonComponent,
     NumerosComponent,
-    PersonalizadosComponent
+    PersonalizadosComponent,
+    CanflyPipe,
+    SortPipe
   ],
   imports: [
     CommonModule,
